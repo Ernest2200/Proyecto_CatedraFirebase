@@ -22,13 +22,13 @@ class AddActivity : AppCompatActivity() {
         val myRef = database.getReference("places")
 
         val name=binding.nameEditText.text
-        val date=binding.dateEditText.text
+        val location=binding.dateEditText.text
         val description=binding.descriptionEditText.text
         val url=binding.urlEditText.text
 
         binding.saveButton.setOnClickListener {
 
-            val places = PlacesTuristic(name.toString(), date.toString(), description.toString(), url.toString())
+            val places = PlacesTuristic(name.toString(), location.toString(), description.toString(), url.toString())
             myRef.child(myRef.push().key.toString()).setValue(places)
             finish()
         }

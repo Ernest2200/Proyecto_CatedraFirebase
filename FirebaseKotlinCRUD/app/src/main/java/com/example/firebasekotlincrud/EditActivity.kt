@@ -32,7 +32,7 @@ class EditActivity : AppCompatActivity() {
                 val places:PlacesTuristic? = dataSnapshot.getValue(PlacesTuristic::class.java)
                 if (places != null) {
                    binding.nameEditText.text = Editable.Factory.getInstance().newEditable(places.name)
-                    binding.dateEditText.text = Editable.Factory.getInstance().newEditable(places.date)
+                    binding.dateEditText.text = Editable.Factory.getInstance().newEditable(places.location)
                     binding.descriptionEditText.text = Editable.Factory.getInstance().newEditable(places.description)
                     binding.urlEditText.text = Editable.Factory.getInstance().newEditable(places.url)
                 }
@@ -47,12 +47,12 @@ class EditActivity : AppCompatActivity() {
         binding.saveButton.setOnClickListener {
 
             val name : String = binding.nameEditText.text.toString()
-            val date : String = binding.dateEditText.text.toString()
+            val location : String = binding.dateEditText.text.toString()
             val description: String = binding.descriptionEditText.text.toString()
             val url: String = binding.urlEditText.text.toString()
 
             myRef.child("name").setValue(name)
-            myRef.child("date").setValue(date)
+            myRef.child("location").setValue(location)
             myRef.child("description").setValue(description)
             myRef.child("url").setValue(url)
 

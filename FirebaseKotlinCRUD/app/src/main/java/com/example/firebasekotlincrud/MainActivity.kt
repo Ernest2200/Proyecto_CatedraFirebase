@@ -38,9 +38,17 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddActivity::class.java)
             it.context.startActivity(intent)
         }
-
+binding.imageView2.setOnClickListener{
+    val intent = Intent(this, FavoritesActivity::class.java)
+    it.context.startActivity(intent)
+}
+        binding.imageView3.setOnClickListener{
+            val intent = Intent(this, CategoryActivity::class.java)
+            it.context.startActivity(intent)
+        }
         binding.imageView.setOnClickListener{
-
+            val intent = Intent(this, SearchActivity::class.java)
+            it.context.startActivity(intent)
         }
 
         listVideogames.clear()
@@ -57,13 +65,14 @@ class MainActivity : AppCompatActivity() {
                 dataSnapshot.children.forEach { child ->
                     val places: PlacesTuristic? =
                             PlacesTuristic(child.child("name").getValue<String>(),
-                                    child.child("date").getValue<String>(),
+                                    child.child("location").getValue<String>(),
                                     child.child("description").getValue<String>(),
                                     child.child("url").getValue<String>(),
                                     child.key)
                     places?.let { listVideogames.add(it) }
                 }
                 recyclerView.adapter = PlacesViewAdapter(listVideogames)
+
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -87,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             val places = values[position]
             holder.mNameTextView.text = places.name
-            holder.mDateTextView.text = places.date
+            holder.mDateTextView.text = places.location
             holder.mPosterImgeView?.let {
                 Glide.with(holder.itemView.context)
                     .load(places.url)
@@ -101,11 +110,11 @@ class MainActivity : AppCompatActivity() {
                 it.context.startActivity(intent)
             }
 
-            holder.itemView.setOnLongClickListener{ v ->
-                val intent = Intent(v.context, EditActivity::class.java).apply {
+            holder.itemView.setOnLongClickListener{
+                val intent = Intent(it.context, EditActivity::class.java).apply {
                     putExtra("key", places.key)
                 }
-                v.context.startActivity(intent)
+                it.context.startActivity(intent)
                 true
             }
 
