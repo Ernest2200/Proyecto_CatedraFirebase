@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding;
     private val database = Firebase.database
     private lateinit var messagesListener: ValueEventListener
-    private val listVideogames:MutableList<PlacesTuristic> = ArrayList()
+    private val listPlaces:MutableList<PlacesTuristic> = ArrayList()
     val myRef = database.getReference("places")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,8 +51,8 @@ binding.imageView2.setOnClickListener{
             it.context.startActivity(intent)
         }
 
-        listVideogames.clear()
-        setupRecyclerView(binding.videogameRecyclerView)
+        listPlaces.clear()
+        setupRecyclerView(binding.placesRecyclerView)
 
     }
 
@@ -61,7 +61,7 @@ binding.imageView2.setOnClickListener{
         messagesListener = object : ValueEventListener {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                listVideogames.clear()
+                listPlaces.clear()
                 dataSnapshot.children.forEach { child ->
                     val places: PlacesTuristic? =
                             PlacesTuristic(child.child("name").getValue<String>(),
@@ -69,9 +69,9 @@ binding.imageView2.setOnClickListener{
                                     child.child("description").getValue<String>(),
                                     child.child("url").getValue<String>(),
                                     child.key)
-                    places?.let { listVideogames.add(it) }
+                    places?.let { listPlaces.add(it) }
                 }
-                recyclerView.adapter = PlacesViewAdapter(listVideogames)
+                recyclerView.adapter = PlacesViewAdapter(listPlaces)
 
             }
 
@@ -89,7 +89,7 @@ binding.imageView2.setOnClickListener{
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.videogame_content, parent, false)
+                .inflate(R.layout.places_content, parent, false)
             return ViewHolder(view)
         }
 
@@ -138,8 +138,8 @@ binding.imageView2.setOnClickListener{
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                listVideogames.get(viewHolder.adapterPosition).key?.let { myRef.child(it).setValue(null) }
-                listVideogames.removeAt(viewHolder.adapterPosition)
+                listPlaces.get(viewHolder.adapterPosition).key?.let { myRef.child(it).setValue(null) }
+                listPlaces.removeAt(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyItemRemoved(viewHolder.adapterPosition)
                 recyclerView.adapter?.notifyDataSetChanged()
             }

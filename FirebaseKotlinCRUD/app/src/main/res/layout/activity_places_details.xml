@@ -84,6 +84,6 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/all"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/final_fantasy" />
+            app:srcCompat="@drawable/lago" />
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

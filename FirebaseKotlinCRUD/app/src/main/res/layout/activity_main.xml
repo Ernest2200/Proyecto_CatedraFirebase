@@ -79,7 +79,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/videogameRecyclerView"
+        android:id="@+id/placesRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="8dp"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.0"
         tools:context=".MainActivity"
-        tools:listitem="@layout/videogame_content" />
+        tools:listitem="@layout/places_content" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newFloatingActionButton"
@@ -100,7 +100,7 @@
         android:layout_margin="20dp"
         android:contentDescription="@string/all"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/videogameRecyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/placesRecyclerView"
         app:srcCompat="@drawable/ic_plus"
         tools:ignore="VectorDrawableCompat" />
 </androidx.constraintlayout.widget.ConstraintLayout>

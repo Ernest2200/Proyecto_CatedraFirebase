@@ -6,6 +6,7 @@ import android.text.Editable
 import android.util.Log
 
 import com.example.firebasekotlincrud.databinding.ActivityEditBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -45,18 +46,25 @@ class EditActivity : AppCompatActivity() {
         })
 
         binding.saveButton.setOnClickListener {
-
             val name : String = binding.nameEditText.text.toString()
             val location : String = binding.dateEditText.text.toString()
             val description: String = binding.descriptionEditText.text.toString()
             val url: String = binding.urlEditText.text.toString()
+            with(binding) {
+                if (name.isNullOrBlank() || location.isNullOrBlank() || description.isNullOrBlank() || url.isNullOrBlank()) {
+                    Snackbar.make(this.root, "Algunos campos estan vacios", Snackbar.LENGTH_SHORT).show()
+                } else {
 
-            myRef.child("name").setValue(name)
-            myRef.child("location").setValue(location)
-            myRef.child("description").setValue(description)
-            myRef.child("url").setValue(url)
 
-finish()
+                    myRef.child("name").setValue(name)
+                    myRef.child("location").setValue(location)
+                    myRef.child("description").setValue(description)
+                    myRef.child("url").setValue(url)
+
+                    finish()
+
+                }                }
+
         }
     }
 

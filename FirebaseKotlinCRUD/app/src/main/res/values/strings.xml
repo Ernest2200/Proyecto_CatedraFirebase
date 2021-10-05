@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">FirebaseKotlinCRUD</string>
     <string name="all">TODO</string>
-    <string name="name">Final fantasy VII remake</string>
-    <string name="date">2 de marzo de 2020</string>
+    <string name="name">Lago de Coatepeque</string>
+    <string name="ubication">Santa Ana</string>
     <string name="title_activity_main">OneWay</string>
     <string name="subtitle_activity_main">2020</string>
     <string name="title_activity_add">Nuevo Lugar Turistico</string>
-    <string name="title_activity_edit">Datos del videojuego</string>
+    <string name="title_activity_edit">Datos del Lugar</string>
     <string name="name_form">Nombre</string>
     <string name="date_form">Ubicación</string>
     <string name="url_form">Url imagen</string>
