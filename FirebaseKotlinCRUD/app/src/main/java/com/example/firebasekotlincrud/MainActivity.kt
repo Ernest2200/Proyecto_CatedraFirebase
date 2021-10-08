@@ -50,6 +50,10 @@ binding.imageView2.setOnClickListener{
             val intent = Intent(this, SearchActivity::class.java)
             it.context.startActivity(intent)
         }
+        binding.imageView4.setOnClickListener{
+            val intent = Intent(this, NotesActivity::class.java)
+            it.context.startActivity(intent)
+        }
 
         listPlaces.clear()
         setupRecyclerView(binding.placesRecyclerView)

@@ -10,8 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity android:name=".CategoryActivity"
+        <activity android:name=".AddNotesActivity"
             android:theme="@style/Theme.FormActivity"></activity>
+        <activity android:name=".NotesActivity"
+            android:theme="@style/Theme.FormActivity"/>
+        <activity
+            android:name=".CategoryActivity"
+            android:theme="@style/Theme.FormActivity" />
         <activity
             android:name=".FavoritesActivity"
             android:theme="@style/Theme.FormActivity" />
