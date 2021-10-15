@@ -10,10 +10,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
-        <activity android:name=".AddNotesActivity"
-            android:theme="@style/Theme.FormActivity"></activity>
-        <activity android:name=".NotesActivity"
-            android:theme="@style/Theme.FormActivity"/>
+        <activity android:name=".SplashActivity"
+            android:theme="@style/Theme.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AddNotesActivity"
+            android:theme="@style/Theme.FormActivity" />
+        <activity
+            android:name=".NotesActivity"
+            android:theme="@style/Theme.FormActivity" />
         <activity
             android:name=".CategoryActivity"
             android:theme="@style/Theme.FormActivity" />

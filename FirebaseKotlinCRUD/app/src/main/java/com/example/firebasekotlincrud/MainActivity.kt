@@ -38,10 +38,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddActivity::class.java)
             it.context.startActivity(intent)
         }
-binding.imageView2.setOnClickListener{
-    val intent = Intent(this, FavoritesActivity::class.java)
-    it.context.startActivity(intent)
-}
+        binding.imageView2.setOnClickListener{
+            val intent = Intent(this, FavoritesActivity::class.java)
+            it.context.startActivity(intent)
+        }
         binding.imageView3.setOnClickListener{
             val intent = Intent(this, CategoryActivity::class.java)
             it.context.startActivity(intent)

@@ -9,8 +9,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/purple_500</item>
         <!-- Customize your theme here. -->
     </style>
-
-    <style name="Theme.FormActivity" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Theme.SplashActivity" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.FormActivity" parent="Theme.Design.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimaryDark">@color/purple_500</item>
         <!-- Secondary brand color. -->
