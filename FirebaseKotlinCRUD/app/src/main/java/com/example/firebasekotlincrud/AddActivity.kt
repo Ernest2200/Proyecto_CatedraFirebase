@@ -26,13 +26,14 @@ class AddActivity : AppCompatActivity() {
         val location=binding.dateEditText.text
         val description=binding.descriptionEditText.text
         val url=binding.urlEditText.text
+        val favorite = false
 
         binding.saveButton.setOnClickListener {
             with(binding) {
                 if (name.isNullOrBlank() || location.isNullOrBlank() || description.isNullOrBlank() || url.isNullOrBlank()) {
                     Snackbar.make(this.root, "Algunos campos estan vacios", Snackbar.LENGTH_SHORT).show()
                 } else {
-                    val places = PlacesTuristic(name.toString(), location.toString(), description.toString(), url.toString())
+                    val places = PlacesTuristic(name.toString(), location.toString(), description.toString(), favorite ,url.toString())
                     myRef.child(myRef.push().key.toString()).setValue(places)
                     finish()
 

@@ -66,11 +66,13 @@ class MainActivity : AppCompatActivity() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 listPlaces.clear()
+
                 dataSnapshot.children.forEach { child ->
                     val places: PlacesTuristic? =
                             PlacesTuristic(child.child("name").getValue<String>(),
                                     child.child("location").getValue<String>(),
                                     child.child("description").getValue<String>(),
+                                    child.child("favorite").getValue<Boolean>(),
                                     child.child("url").getValue<String>(),
                                     child.key)
                     places?.let { listPlaces.add(it) }
@@ -110,6 +112,7 @@ class MainActivity : AppCompatActivity() {
             holder.itemView.setOnClickListener {
                 val intent = Intent(it.context, PlacesDetails::class.java).apply {
                     putExtra("key", places.key)
+                    putExtra("favorite", places.favorite)
                 }
                 it.context.startActivity(intent)
             }

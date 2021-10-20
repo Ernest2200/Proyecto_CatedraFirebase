@@ -13,11 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="550dp"
         android:contentDescription="@string/all"
-android:scaleType="centerCrop"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/lago"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-79dp" />
+        tools:layout_editor_absoluteY="16dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -50,6 +50,7 @@ android:scaleType="centerCrop"
                 android:textStyle="bold"
                 android:textSize="24sp" />
 
+
             <TextView
                 android:id="@+id/dateTextView"
                 android:layout_width="wrap_content"
@@ -60,6 +61,7 @@ android:scaleType="centerCrop"
                 android:layout_marginRight="20dp"
                 android:textColor="#3D5AFE"
                 android:text="@string/ubication" />
+
             <TextView
                 android:id="@+id/descriptionTextView"
                 android:layout_width="match_parent"
@@ -79,8 +81,21 @@ android:scaleType="centerCrop"
 
         </LinearLayout>
 
+
     </androidx.cardview.widget.CardView>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/FavoriteActionButton"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
 
+        android:contentDescription="@string/all"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+
+        app:layout_constraintEnd_toEndOf="@+id/cardView2"
+        app:srcCompat="@drawable/ic_baseline_star_24"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.firebasekotlincrud
 
 import android.os.Bundle
+import android.text.Editable
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
@@ -10,6 +11,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlin.math.log
 
 
 class PlacesDetails : AppCompatActivity() {
@@ -19,14 +21,31 @@ class PlacesDetails : AppCompatActivity() {
         binding = ActivityPlacesDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val key = intent.getStringExtra("key")
+
         val database = Firebase.database
         @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
         val myRef = database.getReference("places").child(key)
 
+
+
+        binding.FavoriteActionButton.setOnClickListener{
+
+    val favorite = true
+    myRef.child("favorite").setValue(favorite)
+    finish()
+
+        }
+binding.FavoriteActionButton.setOnLongClickListener {
+    val favorite = false
+    myRef.child("favorite").setValue(favorite)
+    finish()
+    true
+}
+
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
-                val places:PlacesTuristic? = dataSnapshot.getValue(PlacesTuristic::class.java)
+                val places: PlacesTuristic? = dataSnapshot.getValue(PlacesTuristic::class.java)
                 if (places != null) {
                     binding.nameTextView.text = places.name.toString()
                     binding.descriptionTextView.text = places.description.toString()
@@ -38,7 +57,6 @@ class PlacesDetails : AppCompatActivity() {
                 Log.w("TAG", "Failed to read value.", error.toException())
             }
         })
-
 
     }
 
@@ -52,3 +70,5 @@ class PlacesDetails : AppCompatActivity() {
 
     }
 }
+
+
