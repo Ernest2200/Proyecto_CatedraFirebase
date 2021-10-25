@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddActivity">
+
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="393dp"
+        android:layout_height="625dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            app:srcCompat="@drawable/logo" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="16dp"
+            android:contentDescription="@string/all"
+            app:srcCompat="@drawable/ic__02_search"
+            tools:ignore="VectorDrawableCompat" />
+
+
+        <ImageView
+            android:id="@+id/categorylist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="370dp"
+            android:contentDescription="@string/all"
+            app:srcCompat="@drawable/ic__03_star"
+            tools:ignore="MissingConstraints,VectorDrawableCompat"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+        <ImageView
+            android:id="@+id/categorylist2"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="168dp"
+            android:layout_marginRight="168dp"
+            android:layout_marginBottom="362dp"
+            android:contentDescription="@string/all"
+            app:srcCompat="@drawable/ic__02_bill"
+            tools:ignore="MissingConstraints,VectorDrawableCompat"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+
+        <ImageView
+            android:id="@+id/categorylist3"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:layout_marginBottom="333dp"
+            android:contentDescription="@string/all"
+            app:srcCompat="@drawable/ic_delete"
+            tools:ignore="MissingConstraints,VectorDrawableCompat"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+        <ImageView
+            android:id="@+id/categorylist4"
+            android:layout_width="65dp"
+            android:layout_height="108dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="77dp"
+            android:layout_marginRight="77dp"
+            android:layout_marginBottom="124dp"
+            android:contentDescription="@string/all"
+            app:srcCompat="@drawable/ic_plus"
+            tools:ignore="MissingConstraints,VectorDrawableCompat"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="229dp" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

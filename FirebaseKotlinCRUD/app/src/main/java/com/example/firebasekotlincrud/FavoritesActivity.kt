@@ -50,12 +50,13 @@ class FavoritesActivity : AppCompatActivity() {
 
                 dataSnapshot.children.forEach { child ->
                     val places: PlacesTuristic? =
-                            PlacesTuristic(child.child("name").getValue<String>(),
-                                    child.child("location").getValue<String>(),
-                                    child.child("description").getValue<String>(),
-                                    child.child("favorite").getValue<Boolean>(),
-                                    child.child("url").getValue<String>(),
-                                    child.key)
+                        PlacesTuristic(child.child("name").getValue<String>(),
+                            child.child("location").getValue<String>(),
+                            child.child("description").getValue<String>(),
+                            child.child("favorite").getValue<Boolean>(),
+                            child.child("url").getValue<String>(),
+                            child.child("type").getValue<String>(),
+                            child.key)
                     places?.let { listPlaces.add(it) }
                 }
                 recyclerView.adapter = PlacesViewAdapter(listPlaces)
@@ -72,11 +73,11 @@ class FavoritesActivity : AppCompatActivity() {
     }
 
     class PlacesViewAdapter(private val values: List<PlacesTuristic>) :
-            RecyclerView.Adapter<PlacesViewAdapter.ViewHolder>() {
+        RecyclerView.Adapter<PlacesViewAdapter.ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.places_content, parent, false)
+                .inflate(R.layout.places_content, parent, false)
             return ViewHolder(view)
         }
 
@@ -86,8 +87,8 @@ class FavoritesActivity : AppCompatActivity() {
             holder.mDateTextView.text = places.location
             holder.mPosterImgeView?.let {
                 Glide.with(holder.itemView.context)
-                        .load(places.url)
-                        .into(it)
+                    .load(places.url)
+                    .into(it)
             }
 
             holder.itemView.setOnClickListener {

@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
             it.context.startActivity(intent)
         }
         binding.imageView3.setOnClickListener{
-            val intent = Intent(this, CategoryActivity::class.java)
+            val intent = Intent(this, CategoryListActivity::class.java)
             it.context.startActivity(intent)
         }
         binding.imageView.setOnClickListener{
@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
                                     child.child("description").getValue<String>(),
                                     child.child("favorite").getValue<Boolean>(),
                                     child.child("url").getValue<String>(),
+                                    child.child("type").getValue<String>(),
                                     child.key)
                     places?.let { listPlaces.add(it) }
                 }

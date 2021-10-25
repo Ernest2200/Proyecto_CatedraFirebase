@@ -54,6 +54,7 @@ binding.FavoriteActionButton.setOnLongClickListener {
                 if (places != null) {
                     binding.nameTextView.text = places.name.toString()
                     binding.descriptionTextView.text = places.description.toString()
+                    binding.typeTextView.text = "Categoría: "+places.type.toString()
                     images(places.url.toString())
                 }
             }

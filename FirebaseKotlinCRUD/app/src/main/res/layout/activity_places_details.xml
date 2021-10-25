@@ -77,6 +77,21 @@
                 android:textSize="17dp"
                 android:text="@string/description" />
 
+            <TextView
+                android:id="@+id/typeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/purple_500"
+                android:textSize="17dp"
+                android:text="@string/type" />
+
 
 
         </LinearLayout>

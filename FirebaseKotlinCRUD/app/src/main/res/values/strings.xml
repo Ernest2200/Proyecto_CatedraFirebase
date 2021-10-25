@@ -8,6 +8,7 @@
     <string name="title_activity_add">Nuevo Lugar Turistico</string>
     <string name="title_activity_add_notes">Nueva Nota de Viaje</string>
     <string name="title_activity_edit">Datos del Lugar</string>
+    <string name="spinner_form">Selecciona el tipo de lugar</string>
     <string name="name_form">Nombre</string>
     <string name="date_form">Ubicación</string>
     <string name="date_form_notes">Fecha</string>
@@ -18,5 +19,5 @@
     <string name="notes">Notas de Viaje</string>
     <string name="description">Lago de coatepeque</string>
     <string name="Name_APP">OneWay</string>
-
+    <string name="type">Categoría</string>
 </resources>
