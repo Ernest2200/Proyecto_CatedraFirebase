@@ -19,6 +19,7 @@ class AddActivity : AppCompatActivity() {
     private val database = Firebase.database
     private val options = arrayListOf("Playas", "Lagos","Centros Comerciales","Centros Turísticos")
 
+    @ExperimentalStdlibApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddBinding.inflate(layoutInflater)
@@ -83,7 +84,7 @@ class AddActivity : AppCompatActivity() {
                     Snackbar.make(this.root, "Algunos campos estan vacios", Snackbar.LENGTH_SHORT).show()
                 } else {
 
-                    val places = PlacesTuristic(name.toString(), location.toString(), description.toString(), favorite, url.toString(), type)
+                    val places = PlacesTuristic(name.toString().lowercase(), location.toString(), description.toString(), favorite, url.toString(), type)
                     myRef.child(myRef.push().key.toString()).setValue(places)
 
                     finish()

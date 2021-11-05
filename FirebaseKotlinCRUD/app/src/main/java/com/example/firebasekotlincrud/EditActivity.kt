@@ -22,6 +22,7 @@ import com.google.firebase.ktx.Firebase
 class EditActivity : AppCompatActivity() {
     private lateinit var binding : ActivityEditBinding
     private val options = arrayListOf("Playas", "Lagos","Centros Comerciales","Centros Turísticos")
+    @ExperimentalStdlibApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditBinding.inflate(layoutInflater)
@@ -107,7 +108,7 @@ class EditActivity : AppCompatActivity() {
                 } else {
 
 
-                    myRef.child("name").setValue(name)
+                    myRef.child("name").setValue(name.lowercase())
                     myRef.child("location").setValue(location)
                     myRef.child("description").setValue(description)
                     myRef.child("url").setValue(url)

@@ -4,34 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    android:background="#00FFFCDA"
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/posterImgeView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/all"
-        app:srcCompat="@drawable/mantenimiento"
-
-        />
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/ima"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            app:srcCompat="@drawable/logo"/>
+<com.google.android.material.textview.MaterialTextView
+    android:id="@+id/hola"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
 
-        <TextView
+</com.google.android.material.textview.MaterialTextView>
+        <EditText
+            android:id="@+id/search_query"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/incoming"
-            android:layout_marginTop="500dp"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
-            android:textSize="30dp"
-            ></TextView>
-    </LinearLayout>
+            android:layout_below="@id/ima"
+            app:srcCompat="@drawable/ic_baseline_search_24"
+            tools:ignore="VectorDrawableCompat"
+            android:maxLines="1"
+            android:inputType="text"
+            android:autofillHints="buscar" />
 
+        <Button
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="Buscar"
+            android:inputType="text"
+            android:maxLines="1"
+            android:layout_below="@id/search_query" />
 
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/placesRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+
+        app:layout_constraintVertical_bias="1.0"
+        tools:listitem="@layout/places_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
