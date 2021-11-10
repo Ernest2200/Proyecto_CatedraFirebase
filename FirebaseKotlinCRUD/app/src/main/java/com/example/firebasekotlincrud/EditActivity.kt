@@ -42,7 +42,7 @@ class EditActivity : AppCompatActivity() {
                 override fun onItemSelected(parent: AdapterView<*>,
                                             view: View, position: Int, id: Long) {
 
-                    Snackbar.make(binding.root, "" + id, Snackbar.LENGTH_SHORT).show()
+
                     val id = spinner.selectedItemId.toInt()
                     when(id){
                         0 -> type = "Playas"

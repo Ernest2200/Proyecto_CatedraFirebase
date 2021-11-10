@@ -8,7 +8,7 @@ import com.example.firebasekotlincrud.databinding.ActivityCategoryListBinding
 
 
 class CategoryListActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityCategoryListBinding
+    private lateinit var binding: ActivityCategoryListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCategoryListBinding.inflate(layoutInflater)
@@ -21,6 +21,7 @@ class CategoryListActivity : AppCompatActivity() {
             intent.putExtra("datos", 1);
             it.context.startActivity(intent)
         }
+
 
         binding.categorylist2.setOnClickListener {
             val intent = Intent(this, CategoryActivity::class.java)
@@ -37,6 +38,10 @@ class CategoryListActivity : AppCompatActivity() {
         binding.categorylist4.setOnClickListener {
             val intent = Intent(this, CategoryActivity::class.java)
             intent.putExtra("datos", 4);
+            it.context.startActivity(intent)
+        }
+        binding.imageView.setOnClickListener{
+            val intent = Intent(this, SearchActivity::class.java)
             it.context.startActivity(intent)
         }
     }

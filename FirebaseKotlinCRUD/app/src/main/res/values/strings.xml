@@ -20,4 +20,10 @@
     <string name="description">Lago de coatepeque</string>
     <string name="Name_APP">OneWay</string>
     <string name="type">Categoría</string>
+    <string name="categoria1">Playas</string>
+    <string name="categoria2">Centros Comerciales</string>
+    <string name="categoria3">Centros Turísticos</string>
+    <string name="categoria4">Lagos</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="categoria">Categorias</string>
 </resources>

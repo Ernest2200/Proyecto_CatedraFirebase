@@ -5,21 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddActivity">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:ignore="MissingConstraints">
     <RelativeLayout
         android:id="@+id/linearLayout"
-        android:layout_width="393dp"
-        android:layout_height="625dp"
+        android:layout_width="400dp"
+        android:layout_height="947dp"
+        android:layout_marginTop="4dp"
         android:orientation="vertical"
         android:padding="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/logo"
             android:layout_width="wrap_content"
-            android:layout_height="75dp"
-            app:srcCompat="@drawable/logo" />
+            android:layout_height="35dp"
+            app:srcCompat="@drawable/logo"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/categoria"
+            android:layout_below="@id/logo"
+            android:layout_centerHorizontal="true"
+            android:textSize="35sp"
+
+            />
+
+
 
         <ImageView
             android:id="@+id/imageView"
@@ -36,66 +56,167 @@
             tools:ignore="VectorDrawableCompat" />
 
 
-        <ImageView
-            android:id="@+id/categorylist"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="370dp"
-            android:contentDescription="@string/all"
-            app:srcCompat="@drawable/ic__03_star"
-            tools:ignore="MissingConstraints,VectorDrawableCompat"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="229dp" />
+            android:layout_margin="5dp"
+            android:layout_below="@id/imageView"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="215dp">
 
-        <ImageView
-            android:id="@+id/categorylist2"
-            android:layout_width="106dp"
+            <ImageView
+                android:id="@+id/categorylist"
+
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/playa" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="110dp"
+
+                android:layout_marginBottom="20dp"
+                android:text="@string/categoria1"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="168dp"
-            android:layout_marginRight="168dp"
-            android:layout_marginBottom="362dp"
-            android:contentDescription="@string/all"
-            app:srcCompat="@drawable/ic__02_bill"
-            tools:ignore="MissingConstraints,VectorDrawableCompat"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="229dp" />
+            android:layout_margin="5dp"
+            android:layout_below="@id/card"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="215dp">
+
+            <ImageView
+                android:id="@+id/categorylist2"
+
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/centro" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="110dp"
+
+                android:layout_marginBottom="20dp"
+                android:text="@string/categoria2"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
 
-        <ImageView
-            android:id="@+id/categorylist3"
-            android:layout_width="106dp"
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card3"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="44dp"
-            android:layout_marginRight="44dp"
-            android:layout_marginBottom="333dp"
-            android:contentDescription="@string/all"
-            app:srcCompat="@drawable/ic_delete"
-            tools:ignore="MissingConstraints,VectorDrawableCompat"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="229dp" />
+            android:layout_margin="5dp"
+            android:layout_below="@id/card2"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="215dp">
 
-        <ImageView
-            android:id="@+id/categorylist4"
-            android:layout_width="65dp"
-            android:layout_height="108dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="77dp"
-            android:layout_marginRight="77dp"
-            android:layout_marginBottom="124dp"
-            android:contentDescription="@string/all"
-            app:srcCompat="@drawable/ic_plus"
-            tools:ignore="MissingConstraints,VectorDrawableCompat"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="229dp" />
+            <ImageView
+                android:id="@+id/categorylist3"
 
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/rame" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="110dp"
+
+                android:layout_marginBottom="20dp"
+                android:text="@string/categoria3"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/card3"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="215dp">
+
+            <ImageView
+                android:id="@+id/categorylist4"
+
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/locote" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="110dp"
+
+                android:layout_marginBottom="20dp"
+                android:text="@string/categoria4"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+        </androidx.cardview.widget.CardView>
     </RelativeLayout>
+</ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

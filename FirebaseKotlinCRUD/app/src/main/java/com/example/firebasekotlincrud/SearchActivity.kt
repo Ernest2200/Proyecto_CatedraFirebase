@@ -45,7 +45,7 @@ class SearchActivity : AppCompatActivity() {
           val hola = binding.searchQuery.text
 
         binding.search.setOnClickListener {
-            Snackbar.make(binding.root, hola.toString(), Snackbar.LENGTH_SHORT).show()
+
 
             consulta = hola.toString().lowercase()
 

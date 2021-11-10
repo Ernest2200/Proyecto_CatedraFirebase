@@ -43,18 +43,22 @@ class CategoryActivity : AppCompatActivity() {
             when(valor) {
                 1 -> {
                     consulta = "Playas"
+                    binding.textoIn.setText(consulta)
                     myRef = database.getReference("places").orderByChild("type").equalTo(consulta)
                 }
                 2 -> {
                     consulta = "Centros Comerciales"
+                    binding.textoIn.setText(consulta)
                     myRef = database.getReference("places").orderByChild("type").equalTo(consulta)
                 }
                 3 -> {
                     consulta = "Centros Turísticos"
+                    binding.textoIn.setText(consulta)
                     myRef = database.getReference("places").orderByChild("type").equalTo(consulta)
                 }
                 4 -> {
                     consulta = "Lagos"
+                    binding.textoIn.setText(consulta)
                     myRef = database.getReference("places").orderByChild("type").equalTo(consulta)
                 }
                 else -> {
